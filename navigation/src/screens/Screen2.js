@@ -12,11 +12,18 @@ export default function Screen2() {
 
 
   return (
-<>
-    <View style={appStyles.backgroundScreen2} >
-    <Text> Hola 2</Text>
-    </View>
-   <Menu/>
-   </>
+    <>
+      <View
+        style={{
+          flexDirection: "col",
+          textAlign: "center",
+          textAlignVertical: "auto",
+          flex: 1,
+        }}
+      >
+        <View style={{ backgroundColor: 'green', flex: 15 }}><Text> Hola 2</Text></View>
+      <Menu style={{ flex: 2 }}/>
+      </View>
+    </>
   );
 }

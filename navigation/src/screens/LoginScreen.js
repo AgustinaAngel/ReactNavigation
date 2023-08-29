@@ -15,7 +15,6 @@ const LoginScreen = ({ navigation }) => {
     };
   
     return (
-      <SafeAreaView style={{ flex: 1 }}>
         <View style={appStyles.container}>
           <Image
             style={appStyles.imagenLogo}
@@ -44,13 +43,12 @@ const LoginScreen = ({ navigation }) => {
           </View>
           <Text> {"\n"} </Text>
   
-          <TouchableOpacity onPress={handlePress} style={appStyles.buttonText}>
-            <Text>Ingresar</Text>
+          <TouchableOpacity onPress={handlePress}>
+            <Text style={appStyles.buttonText}>Ingresar</Text>
           </TouchableOpacity>
   
           <StatusBar style="auto" />
         </View>
-      </SafeAreaView>
     );
   };
   export default LoginScreen;

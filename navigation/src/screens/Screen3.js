@@ -13,10 +13,17 @@ export default function Screen3() {
 
   return (
     <>
-    <View style={appStyles.backgroundScreen3} >
-    <Text> Hola 3</Text>
-    </View>
-   <Menu/>
-   </>
+      <View
+        style={{
+          flexDirection: "col",
+          textAlign: "center",
+          textAlignVertical: "auto",
+          flex: 1,
+        }}
+      >
+        <View style={{ backgroundColor: 'blue', flex: 15 }}><Text> Hola 3</Text></View>
+      <Menu style={{ flex: 2 }}/>
+      </View>
+    </>
   );
 }

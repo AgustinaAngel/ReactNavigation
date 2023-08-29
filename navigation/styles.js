@@ -11,21 +11,29 @@ const appStyles = {
       textAlign: 'left',
     },
     buttonText: {
-        backgroundColor: '#00A2E8',
+        backgroundColor: '#f29100ff',
+        color:'#5107baff',
         paddingVertical: 12,
         paddingHorizontal: 24,
         borderRadius: 5,
-        height: 40,
-        width: 100,
+        height: 50,
+        width: 110,
         textAlign: 'center',
-
+        alignItems: 'center',
       },
-      input: {    height: 40, borderWidth: 2, padding: 1,  width: 200,},
+      input: {    
+        height: 40, 
+        borderWidth: 1, 
+        padding: 1,  
+        width: 200,  
+        
+      },
       posBotton: {
         flexDirection     : 'row',        
         textAlign         : 'center',        
         textAlignVertical : 'auto',        
         flex              : 1,
+        
       },
       imagenLogo:{
       height: 60,   width: 450, padding: 10, margin:50,    justifyContent: 'center',
