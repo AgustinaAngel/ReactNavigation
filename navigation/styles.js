@@ -40,7 +40,8 @@ const appStyles = {
   },
   buttonText1: {
     color: "white",
-    paddingVertical: 12,
+    fontSize: 15,
+    paddingVertical: 5,
     paddingHorizontal: 24,
     borderRadius: 5,
     textAlign: "center",
