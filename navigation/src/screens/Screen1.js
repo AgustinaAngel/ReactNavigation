@@ -25,7 +25,9 @@ export default function Screen1() {
           flex: 1,
         }}
       >
-        <View style={{ backgroundColor: 'red', flex: 15 }}><Text> Hola 1</Text></View>
+        <View style={{ backgroundColor: 'red', flex: 15 }}>
+        <Text style={appStyles.textoScreen}>Hola 1</Text>          
+          </View>
       <Menu style={{ flex: 2 }}/>
       </View>
 

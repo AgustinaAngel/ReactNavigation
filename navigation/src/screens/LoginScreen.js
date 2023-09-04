@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import {Pressable,Text,View,TouchableOpacity,Button,SafeAreaView,TextInput,} from "react-native";
 import { Image } from "react-native";
 import appStyles from "../../styles.js";
+import BotonReutilizable from '../components/BotonReutilizable';
 import { useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 const Stack = createStackNavigator();
@@ -10,7 +11,7 @@ const LoginScreen = ({ navigation }) => {
     const [usuario, setUsuario] = useState("");
     const [clave, setClave] = useState("");
   
-    const handlePress = () => {
+    const handleOnPress = () => {
       navigation.navigate("Screen1");
     };
   
@@ -43,10 +44,13 @@ const LoginScreen = ({ navigation }) => {
           </View>
           <Text> {"\n"} </Text>
   
-          <TouchableOpacity onPress={handlePress}>
-            <Text style={appStyles.buttonText}>Ingresar</Text>
-          </TouchableOpacity>
-  
+         
+        
+          <BotonReutilizable
+          onPress={handleOnPress}
+          style={appStyles.logInButton}
+          texto={'Ingresar'}
+        />
           <StatusBar style="auto" />
         </View>
     );
