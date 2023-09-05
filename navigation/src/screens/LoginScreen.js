@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import {Pressable,Text,View,TouchableOpacity,Button,SafeAreaView,TextInput,} from "react-native";
+import {Text,View,TextInput,} from "react-native";
 import { Image } from "react-native";
 import appStyles from "../../styles.js";
 import BotonReutilizable from '../components/BotonReutilizable';
@@ -12,6 +12,8 @@ const LoginScreen = ({ navigation }) => {
     const [clave, setClave] = useState("");
   
     const handleOnPress = () => {
+      console.log('ESTOY EN LOGIN')
+      console.log('VOY A SREEN 1')
       navigation.navigate("Screen1");
     };
   
@@ -44,8 +46,6 @@ const LoginScreen = ({ navigation }) => {
           </View>
           <Text> {"\n"} </Text>
   
-         
-        
           <BotonReutilizable
           onPress={handleOnPress}
           style={appStyles.logInButton}

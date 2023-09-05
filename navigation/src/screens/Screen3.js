@@ -3,18 +3,19 @@ import appStyles from '../../styles';
 import { useState } from 'react';
 import * as React from 'react';
 import Menu from '../components/Menu';
-import {Pressable,Text,View,TouchableOpacity,Button,SafeAreaView,TextInput,StyleSheet} from "react-native";
+import {Text,View} from "react-native";
 import { createStackNavigator } from '@react-navigation/stack';
 import { useNavigation } from "@react-navigation/native";
 import BotonReutilizable from '../components/BotonReutilizable';
 const Stack = createStackNavigator()
- 
 
 export default function Screen3() {
   const navigation = useNavigation(); 
   const handleOnPress=()=>{
+    console.log("ESTOY EN SREEN 3");
     console.log("VOY A LOGIN");
     navigation.navigate('LoginScreen');
+    
 }
   return (
     <>

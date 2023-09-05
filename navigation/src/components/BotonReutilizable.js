@@ -5,6 +5,8 @@ import appStyles from '../../styles';
 const BotonReutilizable = ({ onPress, style, texto }) => {
     const handleOnPress=()=>{
         console.log("HAGO ALGO PREVIO");
+        const currentDate = new Date();
+        console.log("Fecha y Hora:", currentDate);
         if(typeof onPress === 'function'){
             onPress(); 
         }

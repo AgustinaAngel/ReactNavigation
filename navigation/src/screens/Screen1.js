@@ -1,15 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import appStyles from "../../styles";
-import {
-  Pressable,
-  Text,
-  View,
-  TouchableOpacity,
-  Button,
-  SafeAreaView,
-  TextInput,
-} from "react-native";
-import { useState } from "react";
+import {Text,View} from "react-native";
 import Menu from "../components/Menu";
 import { createStackNavigator } from "@react-navigation/stack";
 const Stack = createStackNavigator();
