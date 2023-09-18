@@ -9,6 +9,7 @@ import Screen1 from "./src/screens/Screen1";
 import Screen2 from "./src/screens/Screen2";
 import Screen3 from "./src/screens/Screen3";
 import { SafeAreaView } from "react-native";
+import SplashScreen from "./src/screens/SplashScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -18,11 +19,16 @@ export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="LoginScreen">
+          <Stack.Navigator initialRouteName="SplashScreen">
             <Stack.Screen
+              name="SplashScreen"
+              component={SplashScreen}
+              options={{ title: "Menu", headerShown: false }}
+            />
+             <Stack.Screen
               name="LoginScreen"
               component={LoginScreen}
-              options={{ title: "Menu", headerShown: false }}
+              options={{ title: "LoginScreen", headerShown: false }}
             />
             <Stack.Screen
               name="Screen1"
