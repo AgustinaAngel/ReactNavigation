@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import appStyles from "../../styles.js";
 import Icon from "react-native-vector-icons/FontAwesome"; // Importa el icono que desees
 
-import appStyles from "../../styles.js";
 
 const Menu = () => {
   const navigation = useNavigation(); 

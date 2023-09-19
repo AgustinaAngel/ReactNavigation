@@ -12,43 +12,40 @@ import { SafeAreaView } from "react-native";
 import SplashScreen from "./src/screens/SplashScreen";
 
 
+
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  //const insets = useSafeAreaInsets();
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName="SplashScreen">
-            <Stack.Screen
-              name="SplashScreen"
-              component={SplashScreen}
-              options={{ title: "Menu", headerShown: false }}
-            />
-             <Stack.Screen
-              name="LoginScreen"
-              component={LoginScreen}
-              options={{ title: "LoginScreen", headerShown: false }}
-            />
-            <Stack.Screen
-              name="Screen1"
-              component={Screen1}
-              options={{ title: "Screen1", headerShown: false }}
-            />
-            <Stack.Screen
-              name="Screen2"
-              component={Screen2}
-              options={{ title: "Screen2", headerShown: false }}
-            />
-            <Stack.Screen
-              name="Screen3"
-              component={Screen3}
-              options={{ title: "Screen3", headerShown: false }}
-            />
-            <Stack.Screen name="Profile" component={LoginScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
-    </SafeAreaView>
-
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="SplashScreen">
+        <Stack.Screen
+          name="SplashScreen"
+          component={SplashScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{  headerShown: false }}
+        />
+        <Stack.Screen
+          name="Screen1"
+          component={Screen1}
+          options={{  headerShown: false }}
+        />
+        <Stack.Screen
+          name="Screen2"
+          component={Screen2}
+          options={{  headerShown: false }}
+        />
+        <Stack.Screen
+          name="Screen3"
+          component={Screen3}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

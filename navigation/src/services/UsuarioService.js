@@ -17,12 +17,15 @@ class UsuarioService {
   static automaticLogin = async () => {
     // Obtener las credenciales almacenadas e intentar iniciar sesión automáticamente.
     const savedUserName = await AsyncStorage.getItem("LOGIN_username");
+    console.log(savedUserName);
     const savedUserPassword = await AsyncStorage.getItem("LOGIN_password");
-    if ((savedUserName!="") && (savedUserPassword!="")) {
+    if ((savedUserName !== null) && (savedUserPassword !==null)) {
+    
       return true; 
     }
     else{
-        return false; 
+      
+      return false; 
     }
  
   }
