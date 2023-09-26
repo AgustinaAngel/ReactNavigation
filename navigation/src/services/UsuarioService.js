@@ -1,20 +1,22 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-constUSERNAME_KEY='LOGIN_username';
-constPASSWORD_KEY='LOGIN_password';
+const USERNAME_KEY='LOGIN_username';
+const PASSWORD_KEY='LOGIN_password';
 
 class UsuarioService {
   static login = async (userName, password) => {
     // Obtener las credenciales almacenadas e intentar iniciar sesión.creedenciales
-    const creedenciales = await UsuarioService.obtenerCredenciales();
-    if (creedenciales && creedenciales.userName === userName && creedenciales.password === password) {
-      return true; // Credenciales válidas, el inicio de sesión es exitoso.
+    const usuarioNombre="HOLA";
+    const usuarioContra="HOLA";
+    if (userName === usuarioNombre && password === usuarioContra) {
+      console.log("SIII"); 
+      return true;
     } else {
-      return false; // Credenciales inválidas, el inicio de sesión falla.
+      return false; 
     }
   }
 
-  static automaticLogin = async () => {
+  static automaticLoginVer = async () => {
     // Obtener las credenciales almacenadas e intentar iniciar sesión automáticamente.
     const savedUserName = await AsyncStorage.getItem("LOGIN_username");
     console.log(savedUserName);
@@ -31,24 +33,33 @@ class UsuarioService {
   }
 
   // Eliminar las credenciales almacenadas al cerrar sesión.
-  static eliminarCredenciales = async () => {
-    await AsyncStorage.removeItem(USERNAME_KEY);
-    await AsyncStorage.removeItem(PASSWORD_KEY);
-  }
+  static eliminarCredenciales = async() => { 
+    try{
+        await AsyncStorage.removeItem(USERNAME_KEY); 
+        await AsyncStorage.removeItem(PASSWORD_KEY); 
+    }catch(e){
+        console.log(e);
+    }
+}; 
 
-  static almacenarCredenciales = async (userName, password) => {
-    // Almacena las credenciales en AsyncStorage (para leerlas al iniciar la próxima vez).
-    await AsyncStorage.setItem(USERNAME_KEY, userName);
-    await AsyncStorage.setItem(PASSWORD_KEY, password);
-  }
+static almacenarCredenciales = async(userName,password) => { 
+    //Almacena las credenciales en el asyncStorage
+    //(para leerlas al iniciar la próxima vez) 
+    try {    
+        await AsyncStorage.setItem(USERNAME_KEY, userName);  
+        await AsyncStorage.setItem(PASSWORD_KEY, password); 
+    } catch(e) {    
+        console.log(e);
+    }
+}; 
 
-  static obtenerCredenciales = async () => {
-    // Obtener las credenciales almacenadas desde AsyncStorage.
-    const storedUserName = await AsyncStorage.getItem(USERNAME_KEY);
-    const storedPassword = await AsyncStorage.getItem(PASSWORD_KEY);
-    const returnValue = { 'userName': storedUserName, 'password': storedPassword };
-    return returnValue;
-  }
+static obtenerCredencialesVer = async() => { 
+ 
+    let storedUserName = await AsyncStorage.getItem(USERNAME_KEY);
+    let storedPassword = await AsyncStorage.getItem(PASSWORD_KEY);
+    const returnValue = {'userName':storedUserName, 'password':storedPassword}; 
+
+    return returnValue; 
+}; 
 }
-
 export default UsuarioService;

@@ -1,24 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import {Text,View,TextInput,} from "react-native";
 import { Image } from "react-native";
+import UsuarioService from "../services/UsuarioService";
 import appStyles from "../../styles.js";
 import BotonReutilizable from '../components/BotonReutilizable';
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 const Stack = createStackNavigator();
+import{Alert}from'react-native'; 
 
 const LoginScreen = ({ navigation }) => {
     const [usuario, setUsuario] = useState("");
     const [clave, setClave] = useState("");
-  
+    const passwordRef=useRef();
     const handleOnPress = async () => {
-      // Realiza la lógica de inicio de sesión aquí, por ejemplo, usando UsuarioService.login
       const loginExitoso = await UsuarioService.login(usuario, clave);
     
       if (loginExitoso) {
         navigation.navigate("Screen1");
+       await UsuarioService.almacenarCredenciales(usuario, clave);
+        
       } else {
-        // Mostrar un mensaje de error si el inicio de sesión falla
+        const texto="Ingrese nuevamente los datos"; 
+        Alert.alert('LOGUEO INCORRECTO',texto);
       }
     };
     return (
@@ -35,6 +39,11 @@ const LoginScreen = ({ navigation }) => {
               placeholder="Usuario..."
               onChangeText={setUsuario}
               value={usuario}
+              returnKeyType='next' 
+              onSubmitEditing={()=>{
+                passwordRef.current.focus();
+              }} 
+              blurOnSubmit={false}
             />
           </View>
           <Text> {"\n"} </Text>
@@ -46,6 +55,8 @@ const LoginScreen = ({ navigation }) => {
               placeholder="Clave..."
               onChangeText={setClave}
               value={clave}
+              ref={passwordRef} 
+              secureTextEntry
             />
           </View>
           <Text> {"\n"} </Text>

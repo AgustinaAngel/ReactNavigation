@@ -77,7 +77,7 @@ const appStyles = {
   },
   imagenLogo: {
     height: 60,
-    width: 450,
+    width: 210,
     padding: 10,
     margin: 50,
     justifyContent: "center",
