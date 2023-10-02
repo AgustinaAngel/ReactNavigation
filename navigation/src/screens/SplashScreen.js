@@ -6,10 +6,8 @@ import UsuarioService from "../services/UsuarioService";
 import appStyles from "../../styles.js";
 
 const Stack = createStackNavigator();
-
 const SplashScreen = ({ navigation }) => {
   const [esValido, setEsValido] = useState(false);
-
   const confirmarInicioSesion = async () => {
     if (await UsuarioService.automaticLoginVer()) {
       navigation.navigate("Screen1");
@@ -19,9 +17,8 @@ const SplashScreen = ({ navigation }) => {
   };
 
   useEffect(() => {
-    setTimeout(confirmarInicioSesion, 5000);
+    setTimeout(confirmarInicioSesion, 3000);
   }, []);
-
 
   return (
     <View style={styles.container}>
